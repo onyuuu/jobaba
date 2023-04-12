@@ -1,0 +1,249 @@
+@charset "utf-8";
+@import url('reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{font-family: 'Noto Sans KR', sans-serif; box-sizing: border-box;}
+.container{width: 1260px; height: inherit; margin: 0 auto;/*  background: rgba(0, 0, 0, .1); */}
+
+/* 레이아웃 */
+#wrap{width: 100%;}
+#header{width: 100%; height: 200px; background: #38bab2; background: linear-gradient(90deg, rgba(56,186,178,1) 0%, rgba(56,186,178,1) 76%, rgba(0,114,171,1) 80%, rgba(0,50,130,1) 100%);}
+#main{width: 100%; height: auto;}
+#footer{width: 100%; height: 400px;}
+
+
+/* 헤더영역 */
+
+/* top */
+.top{width: 100%; height: 37px; background: -webkit-linear-gradient(top,rgb(245, 245, 245),#ebebeb); line-height: 37px; float: left; position: relative;}
+.top .left{float: left;}
+.top .left ul li{float: left;}
+.top .left ul li::after{content: ""; width: 1px; height: 10px; background: rgb(207, 207, 207); display: inline-block;}
+.top .left ul li:last-child::after{display: none}
+.top .left ul li a{margin: 0 10px; color: rgb(165, 165, 165); font-size: 12px;}
+.top .left ul li:first-child a{margin-left: 0;}
+.top .right ul{float: right;}
+.top .right ul li{float: left;}
+.top .right ul li::after{content: ""; width: 1px; height: 10px; background: rgb(207, 207, 207); display: inline-block;}
+.top .right ul li:last-child::after{display: none}
+.top .right ul li a{margin: 0 10px; color: rgb(165, 165, 165); font-size: 12px;}
+.top .right ul li:last-child a{margin-right: 0;}
+
+/* title */
+.title{width: 100%; height: 94px; background: rgb(255, 255, 255); position: relative; top: 37px; border-top: 1px solid rgb(212, 212, 212);}
+.title h1>span{font-size: 16px; letter-spacing: -1.2px; margin-left: 13px; width: 220px; position: absolute; bottom: 10px; position: relative; bottom: 10px; left: 5px; font-weight: 530;}
+.title h1>span>span{color: rgb(75, 188, 171);}
+.title .logo{float: left;}
+.title .search{float: right;}
+.title .search a{padding: 10px 80px 10px 10px; border-radius: 7px; background: rgb(241, 241, 241) url(../img/잡아바홈화면/btn_searchbar.png) no-repeat 175px 11px; color: #cacaca;}
+
+/* 메뉴 */
+.nav{width: 100%; margin: 0 auto; height: 70px; background: #38bab2; position: relative; top: 37px; background: linear-gradient(90deg, rgba(56,186,178,1) 0%, rgba(56,186,178,1) 76%, rgba(0,114,171,1) 80%, rgba(0,50,130,1) 100%);}
+.nav .bg{display: none; background: #fff; position: absolute; top: 69px; left: 0; width: 100%; height: 295px; background: rgb(255, 255, 255); z-index: 2;  border-bottom: 1px solid rgb(218, 218, 218);}
+.nav:hover .bg{display: block;}
+
+.bg_blue{background: linear-gradient(90deg, #00a8cd 32%, #0072ab 100%); border-top-left-radius: 40px; border-bottom-left-radius: 40px; box-shadow: -5px 0px 8px rgba(63, 63, 63, 0.291);}
+.nav .bg .dep1:hover{z-index: 3;}
+.nav .dep1{text-align: center;}
+.nav .dep1>li:hover>a{color: rgb(255, 244, 86);}
+.nav .dep1>li>ul{position: absolute; z-index: 3;}
+.nav .dep1>li{float: left; width: 170px; height: 70px; cursor: pointer;}
+.nav .dep1>li>a{width: 100%; height: 100%; color: #fff; font-size: 15px; line-height: 70px;}
+.nav .dep1>li>ul{display: none; background: white; width: 100%; height: 243px;}
+.nav:hover .dep1>li>ul{display: block;}
+.nav .dep1>li>.dep2{width: 170px;}
+.nav .dep1>li>.bg_gray{background: rgb(249, 249, 249); width: 240px; height: 243px;}
+.nav .dep1>li>ul>li:first-child{margin-top: 35px;}
+.nav .dep1>li>ul>li{display: block; margin-top: 20px; line-height: 100%; font-size: 14px; letter-spacing: -.7px; width: 100%;}
+.nav .dep1>li>ul>li>a{width: 170px; display: block;}
+.nav .dep1:hover>li>ul>li{display: block;}
+.nav .dep1>li>.dep2>li:hover>a{color: rgb(74, 107, 197); font-weight: bold;}
+
+/* 메뉴 2뎁스 흰배경, 공지바 */
+.nav .bg .notice_bar{position: absolute; bottom: 0px; left: 0; background: #fff; width: 100%; height: 50px; display: none; border-top: 1px solid rgb(218, 218, 218);}
+.nav .dep1:hover, .nav .bg .notice_bar{display: block;}
+.nav .bg .notice_bar strong{line-height: 50px; font-weight: bold; font-size: 14px; letter-spacing: -.5px;}
+.nav .bg .notice_bar span{line-height: 50px; font-size: 14px; letter-spacing: -.7px;}
+.nav .bg .notice_bar .ico{background: url(../img/잡아바홈화면/ico_innergnb.png) no-repeat; width: 26px; height: 26px; display: inline-block; vertical-align: middle; margin-right: 5px;}
+
+.nav .bg .noticebar_left{float: left; width: 100px; font-weight: bold;}
+.nav .bg .noticebar_mid{float: left; width: 920px;}
+.nav .bg .noticebar_right{float: left; width: 240px; font-weight: bold;}
+.nav .bg .noticebar_right .icon2{background-position: -26px 0; margin-left: 10px;}
+.nav .bg .noticebar_right .icon3{background-position: -52px 0; margin-left: 15px;}
+
+.nav .bg .noticebar_right span{width: 122px; height: 100%;}
+.nav .bg .noticebar_right span>span{width: 100px; float: left;}
+
+
+
+/* 본문영역 */
+
+.inner{position: relative; padding: 0 20px; max-width: 1160px; height: 100%; margin: 0 auto;}
+.themeWrap{}
+.themeWrap .visualWrap{width: 100%; height: 1130px; background: url(../img/잡아바홈화면/지원정책/정책활용꿀팁/thema_bg01.png) top no-repeat; background-size: cover; padding: 80px 0; position: relative;}
+
+.themeWrap .visualWrap .leftMenu{background: url(../img/잡아바홈화면/지원정책/정책활용꿀팁/thema_bg_left.png) no-repeat top; position: absolute; width: 181px; height: 333px; padding: 100px 0 0 20px; bottom: 110px; left: 90px; background-size: contain; z-index: 999; box-shadow: 20px 20px 15px rgba(0,0,0,.6);}
+.themeWrap .visualWrap .leftMenu ul{}
+.themeWrap .visualWrap .leftMenu ul li{}
+.themeWrap .visualWrap .leftMenu ul li a{font-family: 'GmarketSansMedium'; color: #7a7773; font-size: 18px; line-height: 38px; position: relative; z-index: 1;}
+.themeWrap .visualWrap .leftMenu ul li.on a, .themeWrap .visualWrap .leftMenu ul li:hover a{font-weight: bold; color: #000;}
+.themeWrap .visualWrap .leftMenu ul li.on a::before, .themeWrap .visualWrap .leftMenu ul li:hover a::before
+{content: ''; border-bottom: 7px solid #dfd9d0; position: absolute; width: 100%; bottom: 0; left: 0; z-index: -1;}
+.themeWrap .visualWrap .leftMenu ul li.on a::after, .themeWrap .visualWrap .leftMenu ul li:hover a::after{content: ''; background: url(../img/잡아바홈화면/지원정책/정책활용꿀팁/thema_icon_left.png) no-repeat; position: absolute; bottom: 0; right: -30px; width: 23px; height: 29px;}
+
+
+
+.themeWrap .visualWrap .inner .titWrap{text-align: center;}
+.themeWrap .visualWrap .inner .titWrap p{}
+.themeWrap .visualWrap .inner .titWrap p::before{content: ''; width: 600px; position: absolute; top: 30px; right: 190px; background: #a8a79b; height: 60px; border-radius: 10px;}
+.themeWrap .visualWrap .inner .titWrap p strong{color: #fff; font-size: 48px; font-weight: bold; letter-spacing: -1px; background: #383633; border-radius: 10px; padding: 5px 20px 0px; transform: rotateZ(-3deg); display: inline-block; position: relative; font-family: 'GmarketSansMedium';}
+.themeWrap .visualWrap .inner .titWrap p strong::before{content:'';background: url(../img/잡아바홈화면/지원정책/정책활용꿀팁/thema_icon_visual01.png) no-repeat center; position: absolute; width: 66px; height: 54px; top: -26px; right: -25px; background-size: contain;}
+.themeWrap .visualWrap .inner .titWrap p strong span{color: #ff95c7; font-family: 'GmarketSansMedium';}
+
+.themeWrap .visualWrap .inner .titWrap ul{margin: 50px 0 60px; display: inline-block;}
+.themeWrap .visualWrap .inner .titWrap ul li{position: relative; font-size: 26px; text-align: left; z-index: 1;}
+.themeWrap .visualWrap .inner .titWrap ul li::before{content: ''; background: url(../img/잡아바홈화면/지원정책/정책활용꿀팁/thema_icon_checkbox.png) center no-repeat; position: absolute; top: 5px; left: -40px; width: 31px; height: 31px; background-size: contain;}
+.themeWrap .visualWrap .inner .titWrap ul li span{font-family: 'GmarketSansMedium'; font-weight: bold; font-style: italic; position: relative;}
+.themeWrap .visualWrap .inner .titWrap ul li span::after{content: ''; border-bottom: 7px solid #fff; position: absolute; width: 100%; bottom: 0; left: 0; z-index: -1;}
+
+.themeWrap .visualWrap .inner .contentsWrap{position: relative; margin: 0 auto; width: 1022px;}
+.themeWrap .visualWrap .inner .contentsWrap .contentBox{position: absolute; top: 0; left: 0; width: 100%; padding: 80px 85px 0;}
+.themeWrap .visualWrap .inner .contentsWrap .contentBox .con_titWrap{}
+.themeWrap .visualWrap .inner .contentsWrap .contentBox .con_titWrap>img{box-shadow: 40px 40px 0 rgb(0 0 0 / 20%); border-radius: 20px;}
+.themeWrap .visualWrap .inner .contentsWrap .contentBox .con_titWrap p{font-style: italic; font-size: 32px; margin-bottom: 10px; letter-spacing: -1px;}
+.themeWrap .visualWrap .inner .contentsWrap .contentBox .con_titWrap>span{font-family: 'GmarketSansMedium'; font-size: 70px; line-height: 90px; letter-spacing: -1px;}
+.themeWrap .visualWrap .inner .contentsWrap .contentBox .con_titWrap span strong{color: #ff439c; font-weight: 700; font-family: 'GmarketSansMedium'; font-size: 78px;}
+.themeWrap .visualWrap .inner .contentsWrap .contentBox .conList{margin-top: 20px;}
+.themeWrap .visualWrap .inner .contentsWrap .contentBox .conList li{float: left; background: #f0ede8; margin-right: 20px; width: 125px; height: 115px; border-radius: 10px; text-align: center;}
+.themeWrap .visualWrap .inner .contentsWrap .contentBox .conList li:last-child{margin-right: 0;}
+.themeWrap .visualWrap .inner .contentsWrap .contentBox .conList li:hover{border: 4px solid #ff439c;}
+.themeWrap .visualWrap .inner .contentsWrap .contentBox .conList li:hover a{padding: 25px 0;}
+.themeWrap .visualWrap .inner .contentsWrap .contentBox .conList li.new{position: relative;}
+.themeWrap .visualWrap .inner .contentsWrap .contentBox .conList li.new::before{content: 'NEW'; position: absolute; top: 0; left: 0; background: #ff439c; color: #fff; font-family: 'GmarketSansMedium'; font-weight: bold; font-size: 10px; padding: 5px 5px 2px 5px; border-top-left-radius: 10px; border-bottom-right-radius: 10px;}
+.themeWrap .visualWrap .inner .contentsWrap .contentBox .conList li:hover.new::before{left: -4px; top: -4px;}
+.themeWrap .visualWrap .inner .contentsWrap .contentBox .conList li a{font-size: 18px; display: block;  padding: 28px 0;}
+
+
+/* 자격증 과정 */
+.themeWrap .eduWrap{}
+.themeWrap .bg1{background: #f2f8ff;}
+.themeWrap .eduWrap .e_titWrap{text-align: center; margin-bottom: 40px;}
+.themeWrap .eduWrap .e_titWrap span{font-family: 'GmarketSansBold'; font-size: 40px; font-weight: bold; -webkit-text-stroke: 1px #fff; position: relative; z-index: 1; padding: 0 5px;}
+.themeWrap .eduWrap .e_titWrap span::before{content: ''; position: absolute; width: 100%; bottom: 3px; left: 0; background: #43b2ff; height: 15px; z-index: -1;}
+.themeWrap .eduWrap .courseWrap{width: 100%; border-bottom: 2px solid #cbcfd4; padding-bottom: 50px;}
+.themeWrap .eduWrap .courseWrap .course_img{float: left; margin-right: 40px;}
+.themeWrap .eduWrap .courseWrap .course_img img{}
+.themeWrap .eduWrap .courseWrap .course_text_box{padding: 20px 0 0; float: left;}
+.themeWrap .eduWrap .courseWrap .course_text_box .course_text{}
+.themeWrap .eduWrap .courseWrap .course_text_box .course_text p{font-size: 22px; letter-spacing: -1px;}
+.themeWrap .eduWrap .courseWrap .course_text_box .course_text span{font-family: 'GmarketSansBold'; font-style: italic; font-size: 34px;}
+.themeWrap .eduWrap .courseWrap .course_text_box .course_text_link{text-align: right; margin-top: 140px;}
+.themeWrap .eduWrap .courseWrap .course_text_box .course_text_link a{background: #43b2ff; color: #fff; font-family: 'GmarketSansBold'; padding: 12px 25px; font-size: 20px; border-radius: 30px;}
+
+.themeWrap .eduWrap .courseList{width: 100%; position: relative; padding: 50px 0;}
+.themeWrap .eduWrap .courseList.bgImg::before{content: ''; background: url(../img/잡아바홈화면/지원정책/정책활용꿀팁/thema_item01_img03.png) no-repeat; position: absolute; left: -350px; bottom: 0; width: 453px; height: 352px; background-size: contain;}
+
+/* 채용시장에서 가장 많이 요구하는 자격 분야 */
+.themeWrap .eduWrap .courseList .c_txtWrap{text-align: center; margin-bottom: 30px;}
+.themeWrap .eduWrap .courseList .c_txtWrap strong{font-family: 'GmarketSansBold'; font-size: 24px; color: #2f2d2a; border-bottom: 1px solid #2f2d2a;}
+
+.themeWrap .eduWrap .courseList .c_contentWrap{width: 100%; height: 600px;}
+.themeWrap .eduWrap .courseList .c_contentWrap .left_chart{float: left; width: 50%; text-align: center; margin: auto 0;}
+.themeWrap .eduWrap .courseList .c_contentWrap .left_chart img{display: inline-block;}
+.themeWrap .eduWrap .courseList .c_contentWrap .right_table{}
+.themeWrap .eduWrap .courseList .c_contentWrap .right_table table{font-size: 20px; background: #fff; border-collapse: collapse;}
+.themeWrap .eduWrap .courseList .c_contentWrap .right_table table thead{color: #fff; background: #0a5ca7;}
+.themeWrap .eduWrap .courseList .c_contentWrap .right_table table th,tr,td{padding: 10px 30px;}
+.themeWrap .eduWrap .courseList .c_contentWrap .right_table table th{border: 2px solid #f2f8ff;}
+.themeWrap .eduWrap .courseList .c_contentWrap .right_table table td{border-left: 2px solid #f2f8ff;}
+.themeWrap .eduWrap .courseList .c_contentWrap .right_table p{color: rgb(167, 167, 167); font-size: 14px; text-align: right; margin-right: 125px; margin-top: 10px;}
+
+
+/* 교육 미리보기 */
+.themeWrap .eduWrap .eduPrev{background: #0a467c; padding: 40px 0; width: 100%;}
+.themeWrap .eduWrap .eduPrev .edu_p_text_box{}
+.themeWrap .eduWrap .eduPrev .edu_p_text_box .edu_p_textWrap{text-align: center; margin-bottom: 30px;}
+.themeWrap .eduWrap .eduPrev .edu_p_text_box .edu_p_textWrap strong{font-family: 'GmarketSansBold'; font-size: 24px; color: #fff; border-bottom: 1px solid #fff;}
+
+.themeWrap .eduWrap .eduPrev .edu_p_content_box{width: 100%; text-align: center;}
+.themeWrap .eduWrap .eduPrev .edu_p_content_box .edu_p_content p{color: #fff; font-size: 19px; margin-top: 20px;}
+.themeWrap .eduWrap .eduPrev .edu_p_content_box .edu_p_content .edu_p_content_left{float: left; width: 50%;}
+.themeWrap .eduWrap .eduPrev .edu_p_content_box .edu_p_content .edu_p_content_right{float: right; width: 50%;}
+.themeWrap .eduWrap .eduPrev .edu_p_content_box .edu_more{width: 100%;}
+.themeWrap .eduWrap .eduPrev .edu_p_content_box .edu_more a{color: #fff; font-size: 20px; font-family: 'GmarketSansBold'; background: #ff4397; padding: 12px 30px; border-radius: 30px;}
+
+
+/* IT 교육 */
+.themeWrap .bg2{background: #f9fff4;}
+.themeWrap .bg3{}
+.themeWrap .bg4{}
+.themeWrap .bg5{}
+.themeWrap .bg6{}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 하단영역 */
+#footer{width: 100%; height: 398px;}
+.fnb_wrap{width: 100%; height: 60px; border-top: 1px solid rgb(226, 226, 226); border-bottom: 1px solid rgb(226, 226, 226);}
+.fnb{float: left;}
+.fnb ul{}
+.fnb ul li{float: left; margin-right: 20px; line-height: 58px;}
+.fnb ul li:after{content: "|"; color: rgb(226, 226, 226); display: inline-block;}
+.fnb ul li:last-child:after{width: 0;}
+.fnb ul li a{margin-right: 20px; font-size: 1.1em;}
+.fnb ul li a span{color: rgb(255, 70, 24); font-weight: bold;}
+.family_site{float: right; line-height: 60px; position: relative;}
+.family_site select{padding: 10px 20px; border-radius: 5px; border: none; appearance: none; background: rgb(245, 245, 245); font-weight: bold;}
+.family_site select option{float: left;}
+.family_site_arr{background: url(../img/잡아바홈화면/f_select_sign.png) no-repeat; width: 13px; height: 8px; position: absolute; right: 10px; top: 25px;}
+
+.f_num_area{width: 100%; height: 187px;}
+.num_logo{width: 180px; height: 170px; background: url(../img/잡아바홈화면/f_logo.png) no-repeat left  20px top 40px; float: left;}
+.f_info_area{float: left; width: 220px; height: 100%; padding-top: 46px;}
+.f_info_area p:first-child{font-size: 1.3em; font-weight: bold; margin: 5px 0 20px 0; color: #0c0c0c;}
+.f_info_area p{font-size: .9em; color: rgb(112, 112, 112); margin-bottom: 5px;}
+.f_number{float: left;}
+.f_number .num_left{width: 320px; height: 54px; padding-top: 46px; float: left;}
+.f_number .num_left span{display: block; float: left; font-size: .95em; color: #0c0c0c; line-height: 200%; font-size: 12px;}
+.f_number .num_left span.num_left_tit{width: 150px;}
+.f_number .num_left span.bold_num{width: 170px; font-weight: bold; color: #353535;}
+.f_number .num_right{width: 320px; height: 54px; padding-top: 46px; float: left;}
+.f_number .num_right span{display: block; float: left; font-size: .95em; color: rgb(112, 112, 112); line-height: 200%; font-size: 12px;}
+.f_number .num_right span.num_left_tit{width: 150px;}
+.f_number .num_right span.bold_num{width: 170px; font-weight: bold; color: #353535;}
+
+.f_sns{float: right; width: 200px; height: 131px;}
+.f_sns>a{width: 100%; height: 76px; background: url(../img/잡아바홈화면/gyeonggi_slogan.png) no-repeat top center; display: block; margin-top: 30px;}
+.f_sns .sns_list{width: 100%; height: 55px;}
+.f_sns .sns_list a{}
+.f_sns .sns_list a span{width: 40px; height: 40px; display: block; float: left;}
+.f_sns .sns_list a span.facebook{background: url(../img/잡아바홈화면/f_face_ico.png) no-repeat center;}
+.f_sns .sns_list a span.insta{background: url(../img/잡아바홈화면/f_insta_ico.png) no-repeat center;}
+.f_sns .sns_list a span.youtube{background: url(../img/잡아바홈화면/f_youtube_ico.png) no-repeat center;}
+.f_sns .sns_list a span.appstore{background: url(../img/잡아바홈화면/appstore.png) no-repeat center;}
+.f_sns .sns_list a span.playstore{background: url(../img/잡아바홈화면/playstore.png) no-repeat center;}
